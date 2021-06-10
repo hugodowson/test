@@ -1,3 +1,5 @@
+//node list object
+
 export const DOM_NODES = {
   repoList: document.getElementById("repo-list"),
   nameInput: document.getElementById("username"),
