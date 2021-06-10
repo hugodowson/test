@@ -2,9 +2,7 @@ import { request } from "@octokit/request";
 
 const repoRequest = (name) => {
   let response = request("GET /users/{username}/repos", {
-    headers: {
-      authorization: "token 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",
-    },
+    headers: {},
     username: name,
     type: "all",
   });
@@ -13,9 +11,7 @@ const repoRequest = (name) => {
 
 const userRequest = (name) => {
   let response = request("GET /users/{username}", {
-    headers: {
-      authorization: "token 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",
-    },
+    headers: {},
     username: name,
     type: "all",
   });
