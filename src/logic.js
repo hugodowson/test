@@ -16,26 +16,3 @@ export const orderSet = (arr, favLangNode) => {
     favLangNode.innerHTML = "No Repositories Found";
   }
 };
-
-export const listTopRepos = (arr, repoList) => {
-  //Sort repo array by forks. Then slice out top 4 most forked repos
-  arr.sort((a, b) => parseFloat(b.forks) - parseFloat(a.forks));
-  const arrSlice = arr.slice(0, 4);
-  //Use .map to create list element with anchor element as child
-  //append each list element to repo list ordered list parent element
-  arrSlice.map((element) => {
-    let node = document.createElement("li");
-    let link = document.createElement("a");
-    [link.href, link.innerHTML] = [element.html_url, element.name];
-    node.className = "list-group-item";
-    node.appendChild(link);
-    repoList.appendChild(node);
-  });
-};
-
-//set details from data object using constant nodes
-export const setDetails = (data, avatarElement, followerCount, repoCount) => {
-  avatarElement.src = data.avatar_url;
-  followerCount.innerHTML = data.followers;
-  repoCount.innerHTML = data.public_repos;
-};
