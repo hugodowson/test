@@ -7,7 +7,7 @@ export const orderSet = (arr, favLangNode) => {
       const lang = arr[i].language;
       counts[lang] = counts[lang] ? counts[lang] + 1 : 1;
     }
-    //Sort object by times used and then set as innerHTML
+    // Reduce for most used language and then set as innerHTML
     const fav = Object.keys(counts).reduce((a, b) =>
       counts[a] > counts[b] ? a : b
     );
