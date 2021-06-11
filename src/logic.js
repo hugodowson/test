@@ -8,7 +8,6 @@ export const orderSet = (arr, favLangNode) => {
       counts[lang] = counts[lang] ? counts[lang] + 1 : 1;
     }
     //Sort object by times used and then set as innerHTML
-    //If statement accounts for users with no repos
     const fav = Object.keys(counts).reduce((a, b) =>
       counts[a] > counts[b] ? a : b
     );
